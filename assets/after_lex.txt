@@ -1,0 +1,22 @@
+[
+  {
+    "type": "Identifier",
+    "value": "h"
+  },
+  {
+    "type": "Argument",
+    "value": "e"
+  },
+  {
+    "type": "Argument",
+    "value": "l"
+  },
+  {
+    "type": "Argument",
+    "value": "l"
+  },
+  {
+    "type": "Argument",
+    "value": "o"
+  },
+]
