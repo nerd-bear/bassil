@@ -1,42 +1,32 @@
-[lex] Starting lexing process for input: "h
-e
-l
-l
-o
-"
-[lex] Parsing command starting at position: 0
-[parse_command] Starting parse at position: 0
-[parse_command] Finished parsing command. Ending position: 1
-[lex] Command found: h
-found new line!
-[lex] Newline encountered at position: 1
-[lex] Moving to next character at position: 2
-[lex] Default case at position: 2 with character: e
-[parse_argument] Starting parse at position: 2
-[parse_argument] Finished parsing argument. Ending position: 3
-[lex] Parsed argument: e
-[lex] Moving to next character at position: 4
-[lex] Default case at position: 4 with character: l
-[parse_argument] Starting parse at position: 4
-[parse_argument] Finished parsing argument. Ending position: 5
-[lex] Parsed argument: l
-[lex] Moving to next character at position: 6
-[lex] Default case at position: 6 with character: l
-[parse_argument] Starting parse at position: 6
-[parse_argument] Finished parsing argument. Ending position: 7
-[lex] Parsed argument: l
-[lex] Moving to next character at position: 8
-[lex] Default case at position: 8 with character: o
-[parse_argument] Starting parse at position: 8
-[parse_argument] Finished parsing argument. Ending position: 9
-[lex] Parsed argument: o
-[lex] Moving to next character at position: 10
+[lex] Starting lexing process for input: "first command;
+second command;
+third command;
+foruth command;
+fifth command;
+" at line: 1, column: 1
 [display_tokens] Displaying tokens:
-Identifier: h
-Argument: e
-Argument: l
-Argument: l
-Argument: o
+Token at line 1, columns 1-5: Identifier: first
+Token at line 1, columns 7-13: Argument: command
+Token at line 1, columns 14-13: Unknown Token Type
 [save_command] Saving tokens:
-[lex] Cleaning up allocated memory for tokens.
-[lex] Lexing process completed.
+[display_tokens] Displaying tokens:
+Token at line 2, columns 1-6: Identifier: second
+Token at line 2, columns 8-14: Argument: command
+Token at line 2, columns 15-14: Unknown Token Type
+[save_command] Saving tokens:
+[display_tokens] Displaying tokens:
+Token at line 3, columns 1-5: Identifier: third
+Token at line 3, columns 7-13: Argument: command
+Token at line 3, columns 14-13: Unknown Token Type
+[save_command] Saving tokens:
+[display_tokens] Displaying tokens:
+Token at line 4, columns 1-6: Identifier: foruth
+Token at line 4, columns 8-14: Argument: command
+Token at line 4, columns 15-14: Unknown Token Type
+[save_command] Saving tokens:
+[display_tokens] Displaying tokens:
+Token at line 5, columns 1-5: Identifier: fifth
+Token at line 5, columns 7-13: Argument: command
+Token at line 5, columns 14-13: Unknown Token Type
+[save_command] Saving tokens:
+[lex] Lexing process completed at line: 6, column: 1

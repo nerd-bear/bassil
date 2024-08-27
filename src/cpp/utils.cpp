@@ -476,7 +476,7 @@ namespace Utils
             }
             file.close();  // Close the file
         } else {
-            std::cerr << "Unable to open file";
+            std::cerr << "[clear_lex_out] Unable to open file";
         }
 
         return buffer.str();  // Convert the buffer content to a string and return it

@@ -24,7 +24,11 @@ typedef struct {
         char *as_string;
         char *as_identifier;
     };
+    int line;            // Line number where the token is found
+    int start_column;    // Start column of the token
+    int end_column;      // End column of the token
 } Token;
+
 
 // Function declarations (prototypes)
 void parse_string(size_t *pos, const std::string &str);

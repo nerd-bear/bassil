@@ -1,5 +1,5 @@
-h
-e
-l
-l
-o
+first command;
+second command;
+third command;
+foruth command;
+fifth command;
