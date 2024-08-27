@@ -438,7 +438,7 @@ namespace Utils
     {
         if (isPrintTrue)
         {
-            std::ofstream outputFile("C:/coding-projects/CPP-Dev/Orion-Shell/assets/logs.txt", std::ios::app);
+            std::ofstream outputFile("C:/coding-projects/CPP-Dev/bassil/assets/logs.txt", std::ios::app);
 
             if (!outputFile.is_open()) {
                 std::cerr << "Failed to open file." << std::endl;
@@ -453,14 +453,14 @@ namespace Utils
 
     void clear_logs()
     {
-        std::ofstream outputFile("C:/coding-projects/CPP-Dev/Orion-Shell/assets/logs.txt", std::ios::out);
+        std::ofstream outputFile("C:/coding-projects/CPP-Dev/bassil/assets/logs.txt", std::ios::out);
         outputFile << ""; 
         outputFile.close();
     }
 
     void clear_lex_out()
     {
-        std::ofstream outputFile("C:/coding-projects/CPP-Dev/Orion-Shell/assets/after_lex.txt", std::ios::out);
+        std::ofstream outputFile("C:/coding-projects/CPP-Dev/bassil/assets/after_lex.txt", std::ios::out);
         outputFile << ""; 
         outputFile.close();
     }

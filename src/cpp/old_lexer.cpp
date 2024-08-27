@@ -1,4 +1,4 @@
-#include "C:\coding-projects\CPP-Dev\Orion-Shell\src\headers\lexer.h"
+#include "C:\coding-projects\CPP-Dev\bassil\src\headers\lexer.h"
 
 bool logBool = true;  // Whether to log or not
 
@@ -69,7 +69,7 @@ void display_tokens(const std::vector<Token>& command) {
 
 void save_command(const std::vector<Token>& command) {
     Utils::general_log("[save_command] Saving tokens:", logBool);
-    std::ofstream outputFile("C:/coding-projects/CPP-Dev/Orion-Shell/assets/after_lex.txt", std::ios::app);
+    std::ofstream outputFile("C:/coding-projects/CPP-Dev/bassil/assets/after_lex.txt", std::ios::app);
 
     if (!outputFile.is_open()) {
         Utils::general_log("Failed to open file.", logBool);

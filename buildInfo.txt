@@ -1,4 +1,4 @@
 General Comp Command: (For main.cpp)
-    g++ CPP-Dev/Orion-Shell/src/main.cpp CPP-Dev/Orion-Shell/src/cpp/utils.cpp CPP-Dev/Orion-Shell/src/cpp/lexer.cpp -o C:/coding-projects/CPP-Dev/Orion-Shell/build/Orion-Shell-Main-Build-ORS-A01 -lgdi32 -luser32 -lshell32
+    g++ CPP-Dev/bassil/src/main.cpp CPP-Dev/bassil/src/cpp/utils.cpp CPP-Dev/bassil/src/cpp/lexer.cpp -o C:/coding-projects/CPP-Dev/bassil/build/bassil-Main-Build-ORS-A01 -lgdi32 -luser32 -lshell32
 
-optional [-w] removes warnings from comp message!
+optional [-w] removes warnings from compile message!

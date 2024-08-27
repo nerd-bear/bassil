@@ -1,4 +1,4 @@
-#include "C:\coding-projects\CPP-Dev\Orion-Shell\src\headers\lexer.h"
+#include "C:\coding-projects\CPP-Dev\bassil\src\headers\lexer.h"
 
 bool logBool = true;  // Whether to log or not
 
@@ -69,7 +69,7 @@ void display_tokens(const std::vector<Token>& command) {
 
 void save_command(const std::vector<Token>& command) {
     Utils::general_log("[save_command] Saving tokens:", logBool);
-    std::ofstream outputFile("C:/coding-projects/CPP-Dev/Orion-Shell/assets/after_lex.txt", std::ios::app);
+    std::ofstream outputFile("C:/coding-projects/CPP-Dev/bassil/assets/after_lex.txt", std::ios::app);
 
     if (!outputFile.is_open()) {
         Utils::general_log("Failed to open file.", logBool);
@@ -119,7 +119,6 @@ void lex(const std::string &inputString) {
     bool commandFound = false;
     std::string commandName;
     size_t i = 0;   
-
     std::vector<Token> command;
 
     Utils::general_log("[lex] Starting lexing process for input: \"" + inputString + "\"", logBool);
@@ -130,17 +129,14 @@ void lex(const std::string &inputString) {
 
         // Skip initial whitespace or newlines
         if (!commandFound && (inputString[i] == ' ' || inputString[i] == '\n')) {
-            Utils::general_log("[lex] Skipping whitespace at position: " + std::to_string(i), logBool);
             i++;
             continue;
         }
 
         if (!commandFound) {
             // Detect command name (first token)
-            Utils::general_log("[lex] Parsing command starting at position: " + std::to_string(i), logBool);
             parse_command(&i, inputString);
             commandName = inputString.substr(start, i - start);
-            Utils::general_log("[lex] Command found: " + commandName, logBool);
             Token cmdToken = {TK_Identifier, .as_identifier = strdup(commandName.c_str())};
             command.push_back(cmdToken);
             commandFound = true;
@@ -149,76 +145,73 @@ void lex(const std::string &inputString) {
 
         // Skip any whitespace after command detection
         if (inputString[i] == ' ') {
-            Utils::general_log("[lex] Skipping whitespace at position: " + std::to_string(i), logBool);
             i++;
             continue;
         }
 
-        if (inputString[i] == ';') {
-
-        }
-
-        if (inputString[i] == '\n') {
-            Utils::general_log("found new line!");
-        }
-
         switch (inputString[i]) {
-            case '\n':
-                Utils::general_log("[lex] Newline encountered at position: " + std::to_string(i), logBool);
+            case ';': {
+                Utils::general_log("[lex] Semicolon encountered, ending current command.", logBool);
+                display_tokens(command);
+                save_command(command);
+                command.clear();
+                commandFound = false;
+                i++;
                 break;
+            }
+
+            case '\n': {
+                Utils::general_log("[lex] Newline encountered, ending current command.", logBool);
+                display_tokens(command);
+                save_command(command);
+                command.clear();
+                commandFound = false;
+                i++;
+                break;
+            }
 
             case '"': {
-                Utils::general_log("[lex] Quoted string detected starting at position: " + std::to_string(i), logBool);
                 i++;
                 parse_string(&i, inputString);
                 TheString = inputString.substr(start + 1, i - start - 1);
-                Utils::general_log("[lex] Parsed string: " + TheString, logBool);
                 Token strToken = {TK_String, .as_string = strdup(TheString.c_str())};
                 command.push_back(strToken);
                 break;
             }
 
             case '-': {
-                Utils::general_log("[lex] Flag detected at position: " + std::to_string(i), logBool);
                 parse_flag(&i, inputString);
                 TheFlag = inputString.substr(start, i - start);
-                Utils::general_log("[lex] Parsed flag: " + TheFlag, logBool);
                 Token flagToken = {TK_Flag, .as_string = strdup(TheFlag.c_str())};
                 command.push_back(flagToken);
                 break;
             } 
 
             default:
-                Utils::general_log("[lex] Default case at position: " + std::to_string(i) + " with character: " + inputString[i], logBool);
-
                 parse_argument(&i, inputString);
                 TheArgument = inputString.substr(start, i - start);
                 if (!TheArgument.empty()) {
-                    Utils::general_log("[lex] Parsed argument: " + TheArgument, logBool);
                     Token argToken = {TK_Argument, .as_string = strdup(TheArgument.c_str())};
                     command.push_back(argToken);
-                } else {
-                    Utils::general_log("[lex] Ignored empty argument.", logBool);
                 }
                 break;
         }
 
         i++;  // Move to the next character after processing
-        Utils::general_log("[lex] Moving to next character at position: " + std::to_string(i), logBool);
     }
 
-    // Display all tokens
-    display_tokens(command);
-    save_command(command);
+    // Process any remaining tokens after the loop ends
+    if (!command.empty()) {
+        display_tokens(command);
+        save_command(command);
+    }
 
-    // lineCount++
-
-    // Cleanup (free allocated memory)
-    Utils::general_log("[lex] Cleaning up allocated memory for tokens.", logBool);
+    // Cleanup allocated memory for tokens
     for (auto &tok : command) {
         if (tok.type == TK_String || tok.type == TK_Identifier || tok.type == TK_Argument || tok.type == TK_Flag) {
-            free(tok.as_string);  // Since both as_string and as_identifier are char* pointing to dynamically allocated memory
+            free(tok.as_string);
         }
     }
+
     Utils::general_log("[lex] Lexing process completed.", logBool);
 }
