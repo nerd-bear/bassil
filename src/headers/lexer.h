@@ -14,7 +14,9 @@ typedef enum {
     TK_Argument,
     TK_Flag,
     TK_String,
-    TK_Semicolon
+    TK_Semicolon,
+    TK_Integer,
+    TK_MathOperator
 } TokenKind;
 
 // Token structure using a union
@@ -29,14 +31,14 @@ typedef struct {
     int end_column;      // End column of the token
 } Token;
 
-
 // Function declarations (prototypes)
 void parse_string(size_t *pos, const std::string &str);
 void parse_flag(size_t *pos, const std::string &str);
 void parse_command(size_t *pos, const std::string &str);
 void parse_argument(size_t *pos, const std::string &str);
+void parse_integer(size_t *pos, const std::string &str);
 void display_tokens(const std::vector<Token>& command);
-void lex(const std::string &inputString);
+std::vector<Token> lex(const std::string &inputString);  // Updated declaration
 
 // Declare logBool as external to avoid multiple definitions
 extern bool logBool;

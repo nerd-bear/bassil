@@ -7,109 +7,74 @@
     "value": "first"
   },
   {
-    "line": 1,
+    "line": 2,
     "start_column": 7,
     "end_column": 13,
     "type": "Argument",
     "value": "command"
   },
-  {
-    "line": 1,
-    "start_column": 14,
-    "end_column": 13,
-    "type": "Semicolon",
-    "value": ";"
-  },
 ]
 [
   {
-    "line": 2,
+    "line": 3,
     "start_column": 1,
     "end_column": 6,
     "type": "Identifier",
     "value": "second"
   },
   {
-    "line": 2,
+    "line": 4,
     "start_column": 8,
     "end_column": 14,
     "type": "Argument",
     "value": "command"
   },
-  {
-    "line": 2,
-    "start_column": 15,
-    "end_column": 14,
-    "type": "Semicolon",
-    "value": ";"
-  },
 ]
 [
   {
-    "line": 3,
+    "line": 5,
     "start_column": 1,
     "end_column": 5,
     "type": "Identifier",
     "value": "third"
   },
   {
-    "line": 3,
+    "line": 6,
     "start_column": 7,
     "end_column": 13,
     "type": "Argument",
     "value": "command"
   },
-  {
-    "line": 3,
-    "start_column": 14,
-    "end_column": 13,
-    "type": "Semicolon",
-    "value": ";"
-  },
 ]
 [
   {
-    "line": 4,
+    "line": 7,
     "start_column": 1,
     "end_column": 6,
     "type": "Identifier",
     "value": "foruth"
   },
   {
-    "line": 4,
+    "line": 8,
     "start_column": 8,
     "end_column": 14,
     "type": "Argument",
     "value": "command"
   },
-  {
-    "line": 4,
-    "start_column": 15,
-    "end_column": 14,
-    "type": "Semicolon",
-    "value": ";"
-  },
 ]
 [
   {
-    "line": 5,
+    "line": 9,
     "start_column": 1,
     "end_column": 5,
     "type": "Identifier",
     "value": "fifth"
   },
   {
-    "line": 5,
+    "line": 10,
     "start_column": 7,
     "end_column": 13,
     "type": "Argument",
     "value": "command"
-  },
-  {
-    "line": 5,
-    "start_column": 14,
-    "end_column": 13,
-    "type": "Semicolon",
-    "value": ";"
   },
 ]

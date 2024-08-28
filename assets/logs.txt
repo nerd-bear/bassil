@@ -1,32 +1,916 @@
+Opened input file successfully.
+Input string: first command;
+second command;
+third command;
+foruth command;
+fifth command;
+1;
+2;
+3;
+
 [lex] Starting lexing process for input: "first command;
 second command;
 third command;
 foruth command;
 fifth command;
+1;
+2;
+3;
 " at line: 1, column: 1
+[lex] i is 
+[lex] Detecting command or integer at line: 1, column: 1
+[lex] Finished detecting command or integer at line: 1, column: 6
+ i is 
+i is 
+[lex] Processing end of command or input at line: 2
 [display_tokens] Displaying tokens:
 Token at line 1, columns 1-5: Identifier: first
-Token at line 1, columns 7-13: Argument: command
-Token at line 1, columns 14-13: Unknown Token Type
+Token at line 2, columns 7-13: Argument: command
 [save_command] Saving tokens:
+[save_command] Successfully opened file.
+[save_command] Writing token to file:
+[save_command] Token Type: Identifier, Value: first
+[save_command] Finished writing token to file.
+[save_command] Writing token to file:
+[save_command] Token Type: Argument, Value: command
+[save_command] Finished writing token to file.
+[save_command] Successfully closed the file.
+[lex] Detecting command or integer at line: 
+lex] Detecting command or integer at line: 
+[lex] Detecting command or integer at line: 3, column: 1
+[lex] Finished detecting command or integer at line: 3, column: 7
+etecting command or integer at line: 
+tecting command or integer at line: 
+[lex] Processing end of command or input at line: 4
 [display_tokens] Displaying tokens:
-Token at line 2, columns 1-6: Identifier: second
-Token at line 2, columns 8-14: Argument: command
-Token at line 2, columns 15-14: Unknown Token Type
-[save_command] Saving tokens:
-[display_tokens] Displaying tokens:
-Token at line 3, columns 1-5: Identifier: third
-Token at line 3, columns 7-13: Argument: command
-Token at line 3, columns 14-13: Unknown Token Type
-[save_command] Saving tokens:
-[display_tokens] Displaying tokens:
-Token at line 4, columns 1-6: Identifier: foruth
+Token at line 3, columns 1-6: Identifier: second
 Token at line 4, columns 8-14: Argument: command
-Token at line 4, columns 15-14: Unknown Token Type
 [save_command] Saving tokens:
+[save_command] Successfully opened file.
+[save_command] Writing token to file:
+[save_command] Token Type: Identifier, Value: second
+[save_command] Finished writing token to file.
+[save_command] Writing token to file:
+[save_command] Token Type: Argument, Value: command
+[save_command] Finished writing token to file.
+[save_command] Successfully closed the file.
+command or integer at line: 
+ommand or integer at line: 
+[lex] Detecting command or integer at line: 5, column: 1
+[lex] Finished detecting command or integer at line: 5, column: 6
+d or integer at line: 
+ or integer at line: 
+[lex] Processing end of command or input at line: 6
 [display_tokens] Displaying tokens:
-Token at line 5, columns 1-5: Identifier: fifth
-Token at line 5, columns 7-13: Argument: command
-Token at line 5, columns 14-13: Unknown Token Type
+Token at line 5, columns 1-5: Identifier: third
+Token at line 6, columns 7-13: Argument: command
 [save_command] Saving tokens:
-[lex] Lexing process completed at line: 6, column: 1
+[save_command] Successfully opened file.
+[save_command] Writing token to file:
+[save_command] Token Type: Identifier, Value: third
+[save_command] Finished writing token to file.
+[save_command] Writing token to file:
+[save_command] Token Type: Argument, Value: command
+[save_command] Finished writing token to file.
+[save_command] Successfully closed the file.
+ger at line: 
+er at line: 
+[lex] Detecting command or integer at line: 7, column: 1
+[lex] Finished detecting command or integer at line: 7, column: 7
+line: 
+ine: 
+[lex] Processing end of command or input at line: 8
+[display_tokens] Displaying tokens:
+Token at line 7, columns 1-6: Identifier: foruth
+Token at line 8, columns 8-14: Argument: command
+[save_command] Saving tokens:
+[save_command] Successfully opened file.
+[save_command] Writing token to file:
+[save_command] Token Type: Identifier, Value: foruth
+[save_command] Finished writing token to file.
+[save_command] Writing token to file:
+[save_command] Token Type: Argument, Value: command
+[save_command] Finished writing token to file.
+[save_command] Successfully closed the file.
+
+[lex] Finished detecting command or integer at line: 
+[lex] Detecting command or integer at line: 9, column: 1
+[lex] Finished detecting command or integer at line: 9, column: 6
+ Finished detecting command or integer at line: 
+Finished detecting command or integer at line: 
+[lex] Processing end of command or input at line: 10
+[display_tokens] Displaying tokens:
+Token at line 9, columns 1-5: Identifier: fifth
+Token at line 10, columns 7-13: Argument: command
+[save_command] Saving tokens:
+[save_command] Successfully opened file.
+[save_command] Writing token to file:
+[save_command] Token Type: Identifier, Value: fifth
+[save_command] Finished writing token to file.
+[save_command] Writing token to file:
+[save_command] Token Type: Argument, Value: command
+[save_command] Finished writing token to file.
+[save_command] Successfully closed the file.
+ detecting command or integer at line: 
+detecting command or integer at line: 
+[lex] Detecting command or integer at line: 11, column: 1
+[lex] Finished detecting command or integer at line: 11, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 12, column: 2
+[lex] Finished detecting command or integer at line: 12, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 13, column: 2
+[lex] Finished detecting command or integer at line: 13, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 14, column: 2
+[lex] Finished detecting command or integer at line: 14, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 15, column: 2
+[lex] Finished detecting command or integer at line: 15, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 16, column: 2
+[lex] Finished detecting command or integer at line: 16, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 17, column: 2
+[lex] Finished detecting command or integer at line: 17, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 18, column: 2
+[lex] Finished detecting command or integer at line: 18, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 19, column: 2
+[lex] Finished detecting command or integer at line: 19, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 20, column: 2
+[lex] Finished detecting command or integer at line: 20, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 21, column: 2
+[lex] Finished detecting command or integer at line: 21, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 22, column: 2
+[lex] Finished detecting command or integer at line: 22, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 23, column: 2
+[lex] Finished detecting command or integer at line: 23, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 24, column: 2
+[lex] Finished detecting command or integer at line: 24, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 25, column: 2
+[lex] Finished detecting command or integer at line: 25, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 26, column: 2
+[lex] Finished detecting command or integer at line: 26, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 27, column: 2
+[lex] Finished detecting command or integer at line: 27, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 28, column: 2
+[lex] Finished detecting command or integer at line: 28, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 29, column: 2
+[lex] Finished detecting command or integer at line: 29, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 30, column: 2
+[lex] Finished detecting command or integer at line: 30, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 31, column: 2
+[lex] Finished detecting command or integer at line: 31, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 32, column: 2
+[lex] Finished detecting command or integer at line: 32, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 33, column: 2
+[lex] Finished detecting command or integer at line: 33, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 34, column: 2
+[lex] Finished detecting command or integer at line: 34, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 35, column: 2
+[lex] Finished detecting command or integer at line: 35, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 36, column: 2
+[lex] Finished detecting command or integer at line: 36, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 37, column: 2
+[lex] Finished detecting command or integer at line: 37, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 38, column: 2
+[lex] Finished detecting command or integer at line: 38, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 39, column: 2
+[lex] Finished detecting command or integer at line: 39, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 40, column: 2
+[lex] Finished detecting command or integer at line: 40, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 41, column: 2
+[lex] Finished detecting command or integer at line: 41, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 42, column: 2
+[lex] Finished detecting command or integer at line: 42, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 43, column: 2
+[lex] Finished detecting command or integer at line: 43, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 44, column: 2
+[lex] Finished detecting command or integer at line: 44, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 45, column: 2
+[lex] Finished detecting command or integer at line: 45, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 46, column: 2
+[lex] Finished detecting command or integer at line: 46, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 47, column: 2
+[lex] Finished detecting command or integer at line: 47, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 48, column: 2
+[lex] Finished detecting command or integer at line: 48, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 49, column: 2
+[lex] Finished detecting command or integer at line: 49, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 50, column: 2
+[lex] Finished detecting command or integer at line: 50, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 51, column: 2
+[lex] Finished detecting command or integer at line: 51, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 52, column: 2
+[lex] Finished detecting command or integer at line: 52, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 53, column: 2
+[lex] Finished detecting command or integer at line: 53, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 54, column: 2
+[lex] Finished detecting command or integer at line: 54, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 55, column: 2
+[lex] Finished detecting command or integer at line: 55, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 56, column: 2
+[lex] Finished detecting command or integer at line: 56, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 57, column: 2
+[lex] Finished detecting command or integer at line: 57, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 58, column: 2
+[lex] Finished detecting command or integer at line: 58, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 59, column: 2
+[lex] Finished detecting command or integer at line: 59, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 60, column: 2
+[lex] Finished detecting command or integer at line: 60, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 61, column: 2
+[lex] Finished detecting command or integer at line: 61, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 62, column: 2
+[lex] Finished detecting command or integer at line: 62, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 63, column: 2
+[lex] Finished detecting command or integer at line: 63, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 64, column: 2
+[lex] Finished detecting command or integer at line: 64, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 65, column: 2
+[lex] Finished detecting command or integer at line: 65, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 66, column: 2
+[lex] Finished detecting command or integer at line: 66, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 67, column: 2
+[lex] Finished detecting command or integer at line: 67, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 68, column: 2
+[lex] Finished detecting command or integer at line: 68, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 69, column: 2
+[lex] Finished detecting command or integer at line: 69, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 70, column: 2
+[lex] Finished detecting command or integer at line: 70, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 71, column: 2
+[lex] Finished detecting command or integer at line: 71, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 72, column: 2
+[lex] Finished detecting command or integer at line: 72, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 73, column: 2
+[lex] Finished detecting command or integer at line: 73, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 74, column: 2
+[lex] Finished detecting command or integer at line: 74, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 75, column: 2
+[lex] Finished detecting command or integer at line: 75, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 76, column: 2
+[lex] Finished detecting command or integer at line: 76, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 77, column: 2
+[lex] Finished detecting command or integer at line: 77, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 78, column: 2
+[lex] Finished detecting command or integer at line: 78, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 79, column: 2
+[lex] Finished detecting command or integer at line: 79, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 80, column: 2
+[lex] Finished detecting command or integer at line: 80, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 81, column: 2
+[lex] Finished detecting command or integer at line: 81, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 82, column: 2
+[lex] Finished detecting command or integer at line: 82, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 83, column: 2
+[lex] Finished detecting command or integer at line: 83, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 84, column: 2
+[lex] Finished detecting command or integer at line: 84, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 85, column: 2
+[lex] Finished detecting command or integer at line: 85, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 86, column: 2
+[lex] Finished detecting command or integer at line: 86, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 87, column: 2
+[lex] Finished detecting command or integer at line: 87, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 88, column: 2
+[lex] Finished detecting command or integer at line: 88, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 89, column: 2
+[lex] Finished detecting command or integer at line: 89, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 90, column: 2
+[lex] Finished detecting command or integer at line: 90, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 91, column: 2
+[lex] Finished detecting command or integer at line: 91, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 92, column: 2
+[lex] Finished detecting command or integer at line: 92, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 93, column: 2
+[lex] Finished detecting command or integer at line: 93, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 94, column: 2
+[lex] Finished detecting command or integer at line: 94, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 95, column: 2
+[lex] Finished detecting command or integer at line: 95, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 96, column: 2
+[lex] Finished detecting command or integer at line: 96, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 97, column: 2
+[lex] Finished detecting command or integer at line: 97, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 98, column: 2
+[lex] Finished detecting command or integer at line: 98, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 99, column: 2
+[lex] Finished detecting command or integer at line: 99, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 100, column: 2
+[lex] Finished detecting command or integer at line: 100, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 101, column: 2
+[lex] Finished detecting command or integer at line: 101, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 102, column: 2
+[lex] Finished detecting command or integer at line: 102, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 103, column: 2
+[lex] Finished detecting command or integer at line: 103, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 104, column: 2
+[lex] Finished detecting command or integer at line: 104, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 105, column: 2
+[lex] Finished detecting command or integer at line: 105, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 106, column: 2
+[lex] Finished detecting command or integer at line: 106, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 107, column: 2
+[lex] Finished detecting command or integer at line: 107, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 108, column: 2
+[lex] Finished detecting command or integer at line: 108, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 109, column: 2
+[lex] Finished detecting command or integer at line: 109, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 110, column: 2
+[lex] Finished detecting command or integer at line: 110, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 111, column: 2
+[lex] Finished detecting command or integer at line: 111, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 112, column: 2
+[lex] Finished detecting command or integer at line: 112, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 113, column: 2
+[lex] Finished detecting command or integer at line: 113, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 114, column: 2
+[lex] Finished detecting command or integer at line: 114, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 115, column: 2
+[lex] Finished detecting command or integer at line: 115, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 116, column: 2
+[lex] Finished detecting command or integer at line: 116, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 117, column: 2
+[lex] Finished detecting command or integer at line: 117, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 118, column: 2
+[lex] Finished detecting command or integer at line: 118, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 119, column: 2
+[lex] Finished detecting command or integer at line: 119, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 120, column: 2
+[lex] Finished detecting command or integer at line: 120, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 121, column: 2
+[lex] Finished detecting command or integer at line: 121, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 122, column: 2
+[lex] Finished detecting command or integer at line: 122, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 123, column: 2
+[lex] Finished detecting command or integer at line: 123, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 124, column: 2
+[lex] Finished detecting command or integer at line: 124, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 125, column: 2
+[lex] Finished detecting command or integer at line: 125, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 126, column: 2
+[lex] Finished detecting command or integer at line: 126, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 127, column: 2
+[lex] Finished detecting command or integer at line: 127, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 128, column: 2
+[lex] Finished detecting command or integer at line: 128, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 129, column: 2
+[lex] Finished detecting command or integer at line: 129, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 130, column: 2
+[lex] Finished detecting command or integer at line: 130, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 131, column: 2
+[lex] Finished detecting command or integer at line: 131, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 132, column: 2
+[lex] Finished detecting command or integer at line: 132, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 133, column: 2
+[lex] Finished detecting command or integer at line: 133, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 134, column: 2
+[lex] Finished detecting command or integer at line: 134, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 135, column: 2
+[lex] Finished detecting command or integer at line: 135, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 136, column: 2
+[lex] Finished detecting command or integer at line: 136, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 137, column: 2
+[lex] Finished detecting command or integer at line: 137, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 138, column: 2
+[lex] Finished detecting command or integer at line: 138, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 139, column: 2
+[lex] Finished detecting command or integer at line: 139, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 140, column: 2
+[lex] Finished detecting command or integer at line: 140, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 141, column: 2
+[lex] Finished detecting command or integer at line: 141, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 142, column: 2
+[lex] Finished detecting command or integer at line: 142, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 143, column: 2
+[lex] Finished detecting command or integer at line: 143, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 144, column: 2
+[lex] Finished detecting command or integer at line: 144, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 145, column: 2
+[lex] Finished detecting command or integer at line: 145, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 146, column: 2
+[lex] Finished detecting command or integer at line: 146, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 147, column: 2
+[lex] Finished detecting command or integer at line: 147, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 148, column: 2
+[lex] Finished detecting command or integer at line: 148, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 149, column: 2
+[lex] Finished detecting command or integer at line: 149, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 150, column: 2
+[lex] Finished detecting command or integer at line: 150, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 151, column: 2
+[lex] Finished detecting command or integer at line: 151, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 152, column: 2
+[lex] Finished detecting command or integer at line: 152, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 153, column: 2
+[lex] Finished detecting command or integer at line: 153, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 154, column: 2
+[lex] Finished detecting command or integer at line: 154, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 155, column: 2
+[lex] Finished detecting command or integer at line: 155, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 156, column: 2
+[lex] Finished detecting command or integer at line: 156, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 157, column: 2
+[lex] Finished detecting command or integer at line: 157, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 158, column: 2
+[lex] Finished detecting command or integer at line: 158, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 159, column: 2
+[lex] Finished detecting command or integer at line: 159, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 160, column: 2
+[lex] Finished detecting command or integer at line: 160, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 161, column: 2
+[lex] Finished detecting command or integer at line: 161, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 162, column: 2
+[lex] Finished detecting command or integer at line: 162, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 163, column: 2
+[lex] Finished detecting command or integer at line: 163, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 164, column: 2
+[lex] Finished detecting command or integer at line: 164, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 165, column: 2
+[lex] Finished detecting command or integer at line: 165, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 166, column: 2
+[lex] Finished detecting command or integer at line: 166, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 167, column: 2
+[lex] Finished detecting command or integer at line: 167, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 168, column: 2
+[lex] Finished detecting command or integer at line: 168, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 169, column: 2
+[lex] Finished detecting command or integer at line: 169, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 170, column: 2
+[lex] Finished detecting command or integer at line: 170, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 171, column: 2
+[lex] Finished detecting command or integer at line: 171, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 172, column: 2
+[lex] Finished detecting command or integer at line: 172, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 173, column: 2
+[lex] Finished detecting command or integer at line: 173, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 174, column: 2
+[lex] Finished detecting command or integer at line: 174, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 175, column: 2
+[lex] Finished detecting command or integer at line: 175, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 176, column: 2
+[lex] Finished detecting command or integer at line: 176, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 177, column: 2
+[lex] Finished detecting command or integer at line: 177, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 178, column: 2
+[lex] Finished detecting command or integer at line: 178, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 179, column: 2
+[lex] Finished detecting command or integer at line: 179, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 180, column: 2
+[lex] Finished detecting command or integer at line: 180, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 181, column: 2
+[lex] Finished detecting command or integer at line: 181, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 182, column: 2
+[lex] Finished detecting command or integer at line: 182, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 183, column: 2
+[lex] Finished detecting command or integer at line: 183, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 184, column: 2
+[lex] Finished detecting command or integer at line: 184, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 185, column: 2
+[lex] Finished detecting command or integer at line: 185, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 186, column: 2
+[lex] Finished detecting command or integer at line: 186, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 187, column: 2
+[lex] Finished detecting command or integer at line: 187, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 188, column: 2
+[lex] Finished detecting command or integer at line: 188, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 189, column: 2
+[lex] Finished detecting command or integer at line: 189, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 190, column: 2
+[lex] Finished detecting command or integer at line: 190, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 191, column: 2
+[lex] Finished detecting command or integer at line: 191, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 192, column: 2
+[lex] Finished detecting command or integer at line: 192, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 193, column: 2
+[lex] Finished detecting command or integer at line: 193, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 194, column: 2
+[lex] Finished detecting command or integer at line: 194, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 195, column: 2
+[lex] Finished detecting command or integer at line: 195, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 196, column: 2
+[lex] Finished detecting command or integer at line: 196, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 197, column: 2
+[lex] Finished detecting command or integer at line: 197, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 198, column: 2
+[lex] Finished detecting command or integer at line: 198, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 199, column: 2
+[lex] Finished detecting command or integer at line: 199, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 200, column: 2
+[lex] Finished detecting command or integer at line: 200, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 201, column: 2
+[lex] Finished detecting command or integer at line: 201, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 202, column: 2
+[lex] Finished detecting command or integer at line: 202, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 203, column: 2
+[lex] Finished detecting command or integer at line: 203, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 204, column: 2
+[lex] Finished detecting command or integer at line: 204, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 205, column: 2
+[lex] Finished detecting command or integer at line: 205, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 206, column: 2
+[lex] Finished detecting command or integer at line: 206, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 207, column: 2
+[lex] Finished detecting command or integer at line: 207, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 208, column: 2
+[lex] Finished detecting command or integer at line: 208, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 209, column: 2
+[lex] Finished detecting command or integer at line: 209, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 210, column: 2
+[lex] Finished detecting command or integer at line: 210, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 211, column: 2
+[lex] Finished detecting command or integer at line: 211, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 212, column: 2
+[lex] Finished detecting command or integer at line: 212, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 213, column: 2
+[lex] Finished detecting command or integer at line: 213, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 214, column: 2
+[lex] Finished detecting command or integer at line: 214, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 215, column: 2
+[lex] Finished detecting command or integer at line: 215, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 216, column: 2
+[lex] Finished detecting command or integer at line: 216, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 217, column: 2
+[lex] Finished detecting command or integer at line: 217, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 218, column: 2
+[lex] Finished detecting command or integer at line: 218, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 219, column: 2
+[lex] Finished detecting command or integer at line: 219, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 220, column: 2
+[lex] Finished detecting command or integer at line: 220, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 221, column: 2
+[lex] Finished detecting command or integer at line: 221, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 222, column: 2
+[lex] Finished detecting command or integer at line: 222, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 223, column: 2
+[lex] Finished detecting command or integer at line: 223, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 224, column: 2
+[lex] Finished detecting command or integer at line: 224, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 225, column: 2
+[lex] Finished detecting command or integer at line: 225, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 226, column: 2
+[lex] Finished detecting command or integer at line: 226, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 227, column: 2
+[lex] Finished detecting command or integer at line: 227, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 228, column: 2
+[lex] Finished detecting command or integer at line: 228, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 229, column: 2
+[lex] Finished detecting command or integer at line: 229, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 230, column: 2
+[lex] Finished detecting command or integer at line: 230, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 231, column: 2
+[lex] Finished detecting command or integer at line: 231, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 232, column: 2
+[lex] Finished detecting command or integer at line: 232, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 233, column: 2
+[lex] Finished detecting command or integer at line: 233, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 234, column: 2
+[lex] Finished detecting command or integer at line: 234, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 235, column: 2
+[lex] Finished detecting command or integer at line: 235, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 236, column: 2
+[lex] Finished detecting command or integer at line: 236, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 237, column: 2
+[lex] Finished detecting command or integer at line: 237, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 238, column: 2
+[lex] Finished detecting command or integer at line: 238, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 239, column: 2
+[lex] Finished detecting command or integer at line: 239, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 240, column: 2
+[lex] Finished detecting command or integer at line: 240, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 241, column: 2
+[lex] Finished detecting command or integer at line: 241, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 242, column: 2
+[lex] Finished detecting command or integer at line: 242, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 243, column: 2
+[lex] Finished detecting command or integer at line: 243, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 244, column: 2
+[lex] Finished detecting command or integer at line: 244, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 245, column: 2
+[lex] Finished detecting command or integer at line: 245, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 246, column: 2
+[lex] Finished detecting command or integer at line: 246, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 247, column: 2
+[lex] Finished detecting command or integer at line: 247, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 248, column: 2
+[lex] Finished detecting command or integer at line: 248, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 249, column: 2
+[lex] Finished detecting command or integer at line: 249, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 250, column: 2
+[lex] Finished detecting command or integer at line: 250, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 251, column: 2
+[lex] Finished detecting command or integer at line: 251, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 252, column: 2
+[lex] Finished detecting command or integer at line: 252, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 253, column: 2
+[lex] Finished detecting command or integer at line: 253, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 254, column: 2
+[lex] Finished detecting command or integer at line: 254, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 255, column: 2
+[lex] Finished detecting command or integer at line: 255, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 256, column: 2
+[lex] Finished detecting command or integer at line: 256, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 257, column: 2
+[lex] Finished detecting command or integer at line: 257, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 258, column: 2
+[lex] Finished detecting command or integer at line: 258, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 259, column: 2
+[lex] Finished detecting command or integer at line: 259, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 260, column: 2
+[lex] Finished detecting command or integer at line: 260, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 261, column: 2
+[lex] Finished detecting command or integer at line: 261, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 262, column: 2
+[lex] Finished detecting command or integer at line: 262, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 263, column: 2
+[lex] Finished detecting command or integer at line: 263, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 264, column: 2
+[lex] Finished detecting command or integer at line: 264, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 265, column: 2
+[lex] Finished detecting command or integer at line: 265, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 266, column: 2
+[lex] Finished detecting command or integer at line: 266, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 267, column: 2
+[lex] Finished detecting command or integer at line: 267, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 268, column: 2
+[lex] Finished detecting command or integer at line: 268, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 269, column: 2
+[lex] Finished detecting command or integer at line: 269, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 270, column: 2
+[lex] Finished detecting command or integer at line: 270, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 271, column: 2
+[lex] Finished detecting command or integer at line: 271, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 272, column: 2
+[lex] Finished detecting command or integer at line: 272, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 273, column: 2
+[lex] Finished detecting command or integer at line: 273, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 274, column: 2
+[lex] Finished detecting command or integer at line: 274, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 275, column: 2
+[lex] Finished detecting command or integer at line: 275, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 276, column: 2
+[lex] Finished detecting command or integer at line: 276, column: 2
+etecting command or integer at line: 
+[lex] Detecting command or integer at line: 277, column: 2
+[lex] Finished detecting command or integer at line: 277, column: 2
+etecting command or integer at line: 

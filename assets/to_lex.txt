@@ -3,3 +3,6 @@ second command;
 third command;
 foruth command;
 fifth command;
+1;
+2;
+3;

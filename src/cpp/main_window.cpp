@@ -25,7 +25,7 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam) 
 
 int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR pCmdLine, int nCmdShow)
 {
-    const wchar_t WINDOW[] = L"Bassil Shell TEST GUI";
+    const wchar_t WINDOW[] = L"Bassil Lang TEST GUI";
 
     WNDCLASS wc = { };
 
