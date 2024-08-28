@@ -434,35 +434,54 @@ namespace Utils
      * Utils::general_log("This message will not be printed.", false); // This will not print the message
      * @endcode
      */
-    void general_log(const std::string &str, bool isPrintTrue)
+    int general_log(const std::string &str, bool isPrintTrue = true)
     {
-        if (isPrintTrue)
+        if (!isPrintTrue)
         {
-            std::ofstream outputFile("C:/coding-projects/CPP-Dev/bassil/assets/logs.txt", std::ios::app);
-
-            if (!outputFile.is_open()) {
-                std::cerr << "Failed to open file." << std::endl;
-                return;
-            }
-
-            outputFile << str << "\n"; // Write the string to the file
-
-            outputFile.close();
+            return 0;
         }
+
+        std::ofstream outputFile("C:/coding-projects/CPP-Dev/bassil/assets/logs.txt", std::ios::app);
+
+        if (!outputFile.is_open()) {
+            std::cerr << "[general_log] Failed to open file." << std::endl;
+            return 1;
+        }
+
+        outputFile << str << "\n"; // Write the string to the file
+        outputFile.close();
+
+        return 0;
     }
 
-    void clear_logs()
+    int clear_logs()
     {
         std::ofstream outputFile("C:/coding-projects/CPP-Dev/bassil/assets/logs.txt", std::ios::out);
+        
+        if (!outputFile.is_open()) {
+            std::cerr << "[clear_logs] Failed to open file." << std::endl;
+            return 1;
+        }
+        
         outputFile << ""; 
         outputFile.close();
+
+        return 0;
     }
 
-    void clear_lex_out()
+    int clear_lex_out()
     {
         std::ofstream outputFile("C:/coding-projects/CPP-Dev/bassil/assets/after_lex.txt", std::ios::out);
+        
+        if (!outputFile.is_open()) {
+            std::cerr << "[clear_lex_out] Failed to open file." << std::endl;
+            return 1;
+        }
+        
         outputFile << ""; 
         outputFile.close();
+
+        return 0;
     }
 
     std::string readFileToString(const std::string& filename) {

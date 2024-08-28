@@ -24,9 +24,10 @@ namespace Utils
     std::string &ltrim(std::string &s);
     std::string &rtrim(std::string &s);
     std::string &trim(std::string &s);
-    void general_log(const std::string &str, bool isPrintTrue = true);
-    void clear_logs();
-    void clear_lex_out();
+    int general_log(const std::string &str, bool isPrintTrue = true);
+    int clear_lex_out();
+    int clear_logs();
+    std::string readFileToString(const std::string& filename);
 }  
 
 #endif // UTILS_H

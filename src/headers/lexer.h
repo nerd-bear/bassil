@@ -16,7 +16,10 @@ typedef enum {
     TK_String,
     TK_Semicolon,
     TK_Integer,
-    TK_MathOperator
+    TK_MathOperator,
+    TK_EqualsSign,
+    TK_TypeInteger,
+    TK_TypeChar
 } TokenKind;
 
 // Token structure using a union
@@ -32,11 +35,11 @@ typedef struct {
 } Token;
 
 // Function declarations (prototypes)
-void parse_string(size_t *pos, const std::string &str);
-void parse_flag(size_t *pos, const std::string &str);
-void parse_command(size_t *pos, const std::string &str);
+void parse_string  (size_t *pos, const std::string &str);
+void parse_flag    (size_t *pos, const std::string &str);
+void parse_command (size_t *pos, const std::string &str);
 void parse_argument(size_t *pos, const std::string &str);
-void parse_integer(size_t *pos, const std::string &str);
+void parse_integer (size_t *pos, const std::string &str);
 void display_tokens(const std::vector<Token>& command);
 std::vector<Token> lex(const std::string &inputString);  // Updated declaration
 
