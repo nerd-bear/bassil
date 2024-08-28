@@ -12,7 +12,7 @@
 typedef enum {
     TK_Identifier,
     TK_Argument,
-    TK_Flag,
+    // TK_Flag, (Currently not supported) 
     TK_String,
     TK_Semicolon,
     TK_Integer,

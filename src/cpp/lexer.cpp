@@ -18,12 +18,12 @@ void parse_string(size_t *pos, const std::string &str) {
     Utils::general_log("[parse_string] Finished parsing string. Ending position: " + std::to_string(*pos), logBool);
 }
 
-void parse_flag(size_t *pos, const std::string &str) {
-    size_t start = *pos;
-    while (*pos < str.size() && str[*pos] != ' ' && str[*pos] != '\n' && str[*pos] != ';') {
-        (*pos)++;
-    }
-}
+// void parse_flag(size_t *pos, const std::string &str) {
+//     size_t start = *pos;
+//     while (*pos < str.size() && str[*pos] != ' ' && str[*pos] != '\n' && str[*pos] != ';') {
+//         (*pos)++;
+//     }
+// }
 
 void parse_command(size_t *pos, const std::string &str) {
     size_t start = *pos;
@@ -60,9 +60,6 @@ void display_tokens(const std::vector<Token>& command) {
                 break;
             case TK_String:
                 logMessage += "String: " + std::string(token.as_string);
-                break;
-            case TK_Flag:
-                logMessage += "Flag: " + std::string(token.as_string);
                 break;
             default:
                 logMessage += "Unknown Token Type";
@@ -109,11 +106,6 @@ void save_command(const std::vector<Token>& command) {
             case TK_String:
                 Utils::general_log("[save_command] Token Type: String, Value: " + std::string(token.as_string), logBool);
                 outputFile << "    \"type\": \"String\",\n";
-                outputFile << "    \"value\": \"" << token.as_string << "\"\n";
-                break;
-            case TK_Flag:
-                Utils::general_log("[save_command] Token Type: Flag, Value: " + std::string(token.as_string), logBool);
-                outputFile << "    \"type\": \"Flag\",\n";
                 outputFile << "    \"value\": \"" << token.as_string << "\"\n";
                 break;
             case TK_Semicolon:
@@ -303,7 +295,7 @@ std::vector<Token> lex(const std::string &inputString) {
     // Free any dynamically allocated memory for strings in tokens
     for (auto &tok : command) {
         if (tok.type == TK_String || tok.type == TK_Identifier ||
-            tok.type == TK_Argument || tok.type == TK_Flag || tok.type == TK_Semicolon || tok.type == TK_Integer) {
+            tok.type == TK_Argument || tok.type == TK_Semicolon || tok.type == TK_Integer) {
             Utils::general_log("[lex] Freeing token memory for type at line: " + std::to_string(line), logBool);
             free(tok.as_string);
         }
