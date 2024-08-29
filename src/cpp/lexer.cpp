@@ -1,6 +1,6 @@
 #include "C:/coding-projects/CPP-Dev/bassil/src/headers/lexer.h"
 
-logBool = true; // Whether to log or not
+logBool = true; // Whether to log or not 
 
 void parse_string(size_t *pos, const std::string &str)
 {
