@@ -12,6 +12,7 @@
 #include <string>
 #include <sstream>
 #include <fstream>
+#include <regex>
 
 /**
  * @namespace Utils
@@ -454,6 +455,16 @@ namespace Utils
         return 0;
     }
 
+    /**
+     * @brief Clears the content of the logs file.
+     *
+     * This function opens the file located at "C:/coding-projects/CPP-Dev/bassil/assets/logs.txt" 
+     * in output mode, effectively clearing its content. If the file cannot be opened, 
+     * an error message is printed to the standard error stream, and the function 
+     * returns 1. On successful completion, the function returns 0.
+     *
+     * @return int Returns 0 on success, or 1 if the file could not be opened.
+     */
     int clear_logs()
     {
         std::ofstream outputFile("C:/coding-projects/CPP-Dev/bassil/assets/logs.txt", std::ios::out);
@@ -469,6 +480,16 @@ namespace Utils
         return 0;
     }
 
+    /**
+     * @brief Clears the content of the lexical analysis output file.
+     *
+     * This function opens the file located at "C:/coding-projects/CPP-Dev/bassil/assets/after_lex.txt" 
+     * in output mode, effectively clearing its content. If the file cannot be opened, 
+     * an error message is printed to the standard error stream, and the function 
+     * returns 1. On successful completion, the function returns 0.
+     *
+     * @return int Returns 0 on success, or 1 if the file could not be opened.
+     */
     int clear_lex_out()
     {
         std::ofstream outputFile("C:/coding-projects/CPP-Dev/bassil/assets/after_lex.txt", std::ios::out);
@@ -484,6 +505,16 @@ namespace Utils
         return 0;
     }
 
+    /**
+     * @brief Reads the entire content of a file into a string.
+     *
+     * This function opens the specified file, reads its content line by line, 
+     * and stores it in a string. If the file cannot be opened, an error message 
+     * is printed to the standard error stream, and an empty string is returned.
+     *
+     * @param filename The path to the file that should be read.
+     * @return std::string The content of the file as a string, or an empty string if the file could not be opened.
+     */
     std::string readFileToString(const std::string& filename) {
         std::ifstream file(filename);  // Open the file
         std::stringstream buffer;      // Create a stringstream to hold the file content
@@ -495,10 +526,164 @@ namespace Utils
             }
             file.close();  // Close the file
         } else {
-            std::cerr << "[clear_lex_out] Unable to open file";
+            std::cerr << "[readFileToString] Unable to open file";
         }
 
         return buffer.str();  // Convert the buffer content to a string and return it
     }
+
+    /**
+     * @brief Enables ANSI escape sequences for console output.
+     *
+     * This function modifies the console mode to enable virtual terminal processing, 
+     * which allows ANSI escape sequences to be recognized by the console. 
+     * If the console mode cannot be retrieved, an error message is printed to the standard error stream.
+     */
+    void enableAnsiInConsole()
+    {
+        HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+        DWORD mode = 0;
+        if (GetConsoleMode(hConsole, &mode)) {
+            mode |= ENABLE_VIRTUAL_TERMINAL_PROCESSING;
+            SetConsoleMode(hConsole, mode);
+        } else {
+            std::cerr << "Failed to get console mode." << std::endl;
+        }
+    }
+
+    /**
+     * @brief Checks if ANSI escape sequences are enabled in the console.
+     *
+     * This function retrieves the current console mode and checks if the 
+     * `ENABLE_VIRTUAL_TERMINAL_PROCESSING` flag is set, indicating that 
+     * ANSI escape sequences are enabled.
+     *
+     * @return bool Returns true if ANSI escape sequences are enabled, false otherwise.
+     */
+    bool isAnsiEnabledInConsole() {
+        HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+        DWORD mode = 0;
+        if (!GetConsoleMode(hConsole, &mode)) {
+            return false;
+        }
+        return (mode & ENABLE_VIRTUAL_TERMINAL_PROCESSING) != 0;
+    }
+
+    /**
+     * @brief Validates a hex color code.
+     *
+     * This function checks if the provided string is a valid hex color code 
+     * in the format `#RRGGBB`, where `RR`, `GG`, and `BB` are two-digit 
+     * hexadecimal values.
+     *
+     * @param colorCode The hex color code to validate.
+     * @return bool Returns true if the color code is valid, false otherwise.
+     */
+    bool isValidHexColor(const std::string& colorCode) {
+        const std::regex hexPattern("^#([A-Fa-f0-9]{6})$");
+        return std::regex_match(colorCode, hexPattern);
+    }
+
+    /**
+     * @brief Applies a hex color code to a given text string using ANSI escape sequences.
+     *
+     * This function formats the provided text with the specified hex color code using 
+     * ANSI escape sequences. The hex color code must be in the format `#RRGGBB`. If the 
+     * color code is invalid, the function returns "Invalid color code!".
+     *
+     * @param text The text to be colored.
+     * @param colorCode The hex color code to apply.
+     * @return std::string The text formatted with the specified color, or an error message if the color code is invalid.
+     */
+    std::string colorText(const std::string& text, const std::string& colorCode) {
+        const std::regex hexPattern("^#([A-Fa-f0-9]{6})$");
+
+        if (std::regex_match(colorCode, hexPattern)) {
+            // Extract RGB components from the hex color code
+            std::string r = colorCode.substr(1, 2);
+            std::string g = colorCode.substr(3, 2);
+            std::string b = colorCode.substr(5, 2);
+
+            int ri = std::stoi(r, nullptr, 16);
+            int gi = std::stoi(g, nullptr, 16);
+            int bi = std::stoi(b, nullptr, 16);
+
+            // Construct the ANSI escape code for the color
+            return "\033[38;2;" + std::to_string(ri) + ";" + std::to_string(gi) + ";" + std::to_string(bi) + "m" + text + "\033[0m";
+        } else {
+            // If the color code is invalid, return the text unmodified
+            return "Invalid color code!";
+        }
+    }
+
+    /**
+     * @brief Formats text as bold using ANSI escape sequences.
+     *
+     * This function formats the provided text as bold using ANSI escape sequences. 
+     * If ANSI escape sequences are not enabled in the console, an error message 
+     * is printed to the standard error stream, and the program exits with a status code of 1.
+     *
+     * @param text The text to be formatted as bold.
+     * @return std::string The bold-formatted text, or an error message if ANSI is not enabled.
+     */
+    std::string boldText(const std::string& text) {
+        if (isAnsiEnabledInConsole() == true)
+        {
+            return "\033[1m" + text + "\033[0m";
+        }
+
+        else
+        {
+            std::cerr << "Error when calling boldText() method, likely enableAnsiInConsole() was not called" << std::endl;
+            exit(1);
+        }
+    }
+
+    /**
+     * @brief Formats text as italic using ANSI escape sequences.
+     *
+     * This function formats the provided text as italic using ANSI escape sequences. 
+     * If ANSI escape sequences are not enabled in the console, an error message 
+     * is printed to the standard error stream, and the program exits with a status code of 1.
+     *
+     * @param text The text to be formatted as italic.
+     * @return std::string The italic-formatted text, or an error message if ANSI is not enabled.
+     */
+    std::string italicText(const std::string& text) {
+        if (isAnsiEnabledInConsole() == true)
+        {
+            return "\033[3m" + text + "\033[0m";
+        }
+
+        else
+        {
+            std::cerr << "Error when calling italicText() method, likely enableAnsiInConsole() was not called" << std::endl;
+            exit(1);
+        }
+    }
+
+    /**
+     * @brief Formats text with an underline using ANSI escape sequences.
+     *
+     * This function formats the provided text with an underline using ANSI escape sequences. 
+     * If ANSI escape sequences are not enabled in the console, an error message 
+     * is printed to the standard error stream, and the program exits with a status code of 1.
+     *
+     * @param text The text to be underlined.
+     * @return std::string The underlined text, or an error message if ANSI is not enabled.
+     */
+    std::string underlineText(const std::string& text) {
+        if (isAnsiEnabledInConsole() == true)
+        {
+            return "\033[4m" + text + "\033[0m";
+        }
+
+        else
+        {
+            std::cerr << "Error when calling underlineText() method, likely enableAnsiInConsole() was not called" << std::endl;
+            exit(1);
+        }
+    }
+
 }
 #endif // UTILS_H

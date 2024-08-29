@@ -12,6 +12,7 @@
 #include <string>
 #include <sstream>
 #include <fstream>
+#include <regex>
 
 namespace Utils
 {
@@ -28,6 +29,13 @@ namespace Utils
     int clear_lex_out();
     int clear_logs();
     std::string readFileToString(const std::string& filename);
+    void enableAnsiInConsole();
+    bool isAnsiEnabledInConsole();
+    bool isValidHexColor(const std::string& colorCode);
+    std::string colorText(const std::string& text, const std::string& colorCode);
+    std::string boldText(const std::string& text);
+    std::string italicText(const std::string& text);
+    std::string underlineText(const std::string& text);
 }  
 
 #endif // UTILS_H

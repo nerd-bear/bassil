@@ -3,7 +3,7 @@
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nShowCmd) {
     Utils::CreateWinAPI32BallonNotification("Started Bassil Lang", "Started Bassil Lang, compiled using G++ from main.cpp using windows.h. Please remember that errors can occur!", 0);
-    
+
     Utils::clear_logs();
     Utils::clear_lex_out();
 
@@ -25,7 +25,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
     bufferStr = buffer.str();
     Utils::general_log("Input string: " + bufferStr, logBool);
-
+    
     std::vector<Token> tokens = lex(bufferStr);
 
     return 0;
