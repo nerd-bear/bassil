@@ -40,7 +40,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
         Utils::clear_lex_out();
 
         // Read input file
-        const std::string inputFilePath = "C:/coding-projects/CPP-Dev/bassil/assets/to_lex.basl";
+        const std::string inputFilePath = "C:/coding-projects/CPP-Dev/bassil/assets/main.basl";
         std::string inputContent = Utils::readFileToString(inputFilePath);
 
         if (inputContent.empty()) {
