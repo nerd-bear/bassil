@@ -1,3 +1,8 @@
+#include <windows.h>
+#include <iostream>
+#include <fstream>
+#include <sstream>
+#include <vector>
 #include "C:/coding-projects/CPP-Dev/bassil/src/headers/utils.h"
 #include "C:/coding-projects/CPP-Dev/bassil/src/headers/lexer.h"
 
@@ -13,18 +18,19 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
     std::string line;
 
     if (file.is_open()) {
-        Utils::general_log("Opened input file successfully.", logBool);
+        Utils::general_log("Opened input file successfully.", true);
         while (std::getline(file, line)) {
             buffer << line << "\n";
         }
         file.close();
     } else {
-        Utils::general_log("Unable to open input file.", logBool);
+        Utils::general_log("Unable to open input file.", true);
+        file.close();
         return 1;
     }
 
     bufferStr = buffer.str();
-    Utils::general_log("Input string: " + bufferStr, logBool);
+    Utils::general_log("Input string: " + bufferStr, true);
     
     std::vector<Token> tokens = lex(bufferStr);
 

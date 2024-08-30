@@ -684,6 +684,5 @@ namespace Utils
             exit(1);
         }
     }
-
 }
 #endif // UTILS_H
