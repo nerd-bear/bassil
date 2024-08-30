@@ -1,3 +1,8 @@
+/**
+ * @file lexer.h
+ * @brief Header file for the lexical analyzer (lexer) of the Bassil language.
+ */
+
 #ifndef LEXER_H
 #define LEXER_H
 
@@ -5,46 +10,83 @@
 #include <vector>
 #include <string>
 #include <unordered_map>
-#include "utils.h"
+#include "C:/coding-projects/CPP-Dev/bassil/src/headers/utils.h"
 #include <fstream>
 
-#define nextChar break
-
-// Enumeration for Token types
+/**
+ * @brief Enumeration for Token types
+ */
 typedef enum {
-    TK_Identifier,
-    TK_Argument,
-    // TK_Flag, (Currently not supported) 
-    TK_String,
-    TK_Semicolon,
-    TK_Integer,
-    TK_MathOperator,
-    TK_EqualsSign,
-    TK_TypeInteger,
-    TK_TypeChar
+    TK_Identifier,    ///< Identifiers (variable names, function names, etc.)
+    TK_Argument,      ///< Command arguments
+    TK_String,        ///< String literals
+    TK_Semicolon,     ///< Semicolon (;)
+    TK_Integer,       ///< Integer literals
+    TK_Float,         ///< Floating-point literals
+    TK_MathOperator,  ///< Mathematical operators (+, -, *, /, %)
+    TK_EqualsSign,    ///< Equals sign (=)
+    TK_TypeInteger,   ///< Integer type keyword
+    TK_TypeChar,      ///< Character type keyword
+    TK_TypeFloat,     ///< Float type keyword
+    TK_TypeString,    ///< String type keyword
+    TK_OpenParen,     ///< Opening parenthesis (
+    TK_CloseParen,    ///< Closing parenthesis )
+    TK_OpenBrace,     ///< Opening brace {
+    TK_CloseBrace,    ///< Closing brace }
+    TK_Comma,         ///< Comma (,)
+    TK_LogicalOperator, ///< Logical operators (&&, ||, !)
+    TK_ComparisonOperator, ///< Comparison operators (==, !=, <, >, <=, >=)
+    TK_Unknown        ///< Unknown token type
 } TokenKind;
 
-// Token structure using a union
+/**
+ * @brief Structure to represent a token
+ */
 typedef struct {
-    TokenKind type;
-    union {
-        char *as_string;
-        char *as_identifier;
-    };
-    int line;            // Line number where the token is found
-    int start_column;    // Start column of the token
-    int end_column;      // End column of the token
+    TokenKind type;   ///< Type of the token
+    std::string value; ///< Value of the token
+    int line;         ///< Line number where the token is found
+    int start_column; ///< Start column of the token
+    int end_column;   ///< End column of the token
 } Token;
 
-extern bool logBool = true;
+extern bool logBool;  ///< Global flag to control logging
 
-// Function declarations (prototypes)
-void parse_string  (size_t *pos, const std::string &str);
-// void parse_flag    (size_t *pos, const std::string &str);
-void parse_command (size_t *pos, const std::string &str);
-void parse_argument(size_t *pos, const std::string &str);
-void parse_integer (size_t *pos, const std::string &str);
-void display_tokens(const std::vector<Token>& command);
+/**
+ * @brief Check if a character is a valid identifier start.
+ * @param c The character to check.
+ * @return bool True if the character is a valid identifier start, false otherwise.
+ */
+inline bool isIdentifierStart(char c) {
+    return std::isalpha(c) || c == '_';
+}
+
+/**
+ * @brief Check if a character is a valid identifier continuation.
+ * @param c The character to check.
+ * @return bool True if the character is a valid identifier continuation, false otherwise.
+ */
+inline bool isIdentifierContinuation(char c) {
+    return std::isalnum(c) || c == '_';
+}
+
+/**
+ * @brief Lexically analyze the input string and generate tokens
+ * @param inputString The input string to be analyzed
+ * @return Vector of tokens
+ */
+std::vector<Token> lex(const std::string& inputString);
+
+/**
+ * @brief Display the generated tokens
+ * @param tokens Vector of tokens to be displayed
+ */
+void display_tokens(const std::vector<Token>& tokens);
+
+/**
+ * @brief Save the generated tokens to a file
+ * @param tokens Vector of tokens to be saved
+ */
 void save_tokens(const std::vector<Token>& tokens);
-std::vector<Token> lex(std::string inputString);
+
 #endif // LEXER_H

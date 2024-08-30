@@ -1,6 +1,0 @@
-first cmd;
-second cmd;
-third cmd;
-1;
-2;
-3;
