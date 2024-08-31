@@ -50,6 +50,13 @@
         "typeinfo": "cpp",
         "bitset": "cpp",
         "regex": "cpp",
-        "cinttypes": "cpp"
+        "cinttypes": "cpp",
+        "chrono": "cpp",
+        "charconv": "cpp",
+        "ratio": "cpp",
+        "format": "cpp",
+        "iomanip": "cpp",
+        "span": "cpp",
+        "variant": "cpp"
     }
 }

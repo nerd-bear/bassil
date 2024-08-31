@@ -1,9 +1,194 @@
-General Comp Command: (For main.cpp)
-    g++ ./src/main.cpp ./src/cpp/utils.cpp ./src/cpp/lexer.cpp ./src/cpp/error_report.cpp -o C:/coding-projects/CPP-Dev/bassil/build/Bassil-Main-Build-ORS-A01 -lgdi32 -luser32 -lshell32
+# Bassil Language Project
 
-Dependencies 0 [];
-GCC/G++ Versions Tested [13.2.0];
-Operating Systems Supported [Windows];
-Windows Versions Tested [10];
+## Table of Contents
 
-optional [-w] removes warnings from compile message!
+1. [Introduction](#introduction)
+2. [Project Overview](#project-overview)
+3. [Key Features](#key-features)
+4. [Project Structure](#project-structure)
+5. [Lexical Analyzer](#lexical-analyzer)
+6. [Error Handling](#error-handling)
+7. [Utility Functions](#utility-functions)
+8. [Windows-Specific Features](#windows-specific-features)
+9. [Dependencies](#dependencies)
+10. [Building and Compilation](#building-and-compilation)
+11. [Usage](#usage)
+12. [File Descriptions](#file-descriptions)
+13. [Token Structure](#token-structure)
+14. [Advanced Features](#advanced-features)
+15. [Performance Considerations](#performance-considerations)
+16. [Future Enhancements](#future-enhancements)
+17. [Contributing](#contributing)
+18. [License](#license)
+19. [Acknowledgments](#acknowledgments)
+20. [Contact](#contact)
+
+## Introduction
+
+Welcome to the Bassil Language Project, an ambitious endeavor to create a custom programming language with a robust lexical analysis system. This project serves as a foundation for a complete language processing pipeline, showcasing advanced C++ programming techniques, Windows API integration, and sophisticated error handling mechanisms.
+
+## Project Overview
+
+Bassil is designed as a modern, efficient programming language with a focus on readability and powerful lexical analysis. The project currently includes a lexical analyzer (lexer), error reporting system, and an extensive set of utility functions. It's built with scalability in mind, allowing for future expansions into parsing, semantic analysis, and code generation phases of language processing.
+
+## Key Features
+
+- **Advanced Lexical Analysis**: Tokenizes Bassil source code with high precision.
+- **Comprehensive Error Reporting**: Provides detailed, context-aware error messages.
+- **Extensive Utility Library**: Offers a wide range of string manipulation, file handling, and Windows API interaction functions.
+- **Windows Integration**: Seamlessly integrates with Windows OS for enhanced user experience.
+- **ANSI-Enabled Console Output**: Supports rich, colorized console output for improved readability.
+- **File Association**: Automatically associates `.basl` files with the Bassil language in Windows.
+
+## Project Structure
+
+The Bassil project is organized into several key components:
+
+- `main.cpp`: The entry point of the application.
+- `lexer.h` and `lexer.cpp`: Implementation of the lexical analyzer.
+- `error_report.h` and `error_report.cpp`: Error reporting functionality.
+- `utils.h` and `utils.cpp`: A comprehensive utility library.
+- `buildInfo.txt`: Compilation and dependency information.
+
+## Lexical Analyzer
+
+The heart of the Bassil project is its sophisticated lexical analyzer, capable of tokenizing Bassil source code into the following token types:
+
+- Identifiers
+- Keywords (int, char, float, string)
+- Literals (integers, floats, strings)
+- Operators (arithmetic, comparison, logical)
+- Punctuation (parentheses, braces, semicolons, commas)
+
+The lexer is designed with performance and accuracy in mind, utilizing efficient algorithms for token recognition and classification.
+
+## Error Handling
+
+Bassil features a robust error handling system that provides developers with detailed, context-aware error messages. The `reportError` function in `error_report.cpp` generates error messages that include:
+
+- File path
+- Line number
+- Column number
+- Detailed error description
+
+This system allows for quick identification and resolution of issues in Bassil source code.
+
+## Utility Functions
+
+The `Utils` namespace provides an extensive set of utility functions, including:
+
+- String manipulation (splitting, trimming, formatting)
+- File operations (reading, writing, logging)
+- Console output formatting with ANSI escape sequences
+- Windows API interactions (message boxes, notifications)
+- Color and text formatting utilities
+
+These utilities are designed to support both the core language features and provide convenience functions for developers using Bassil.
+
+## Windows-Specific Features
+
+Bassil takes full advantage of the Windows operating system, offering:
+
+- Creation of Windows API 32-bit message boxes
+- Windows API balloon notifications for important events
+- Automatic file association and icon setting for `.basl` files
+- Retrieval of monitor information for optimized GUI applications
+
+## Dependencies
+
+- Windows operating system (Tested on Windows 10)
+- GCC/G++ compiler (Tested with version 13.2.0)
+- Windows API libraries: gdi32, user32, shell32
+
+## Building and Compilation
+
+To build the Bassil project, use the following command:
+
+```
+g++ ./src/main.cpp ./src/cpp/utils.cpp ./src/cpp/lexer.cpp ./src/cpp/error_report.cpp -o C:/coding-projects/CPP-Dev/bassil/build/Bassil-Main-Build-ORS-A01 -lgdi32 -luser32 -lshell32
+```
+
+Optional: Add `-w` flag to suppress warnings during compilation.
+
+## Usage
+
+After successful compilation, run the `Bassil-Main-Build-ORS-A01` executable. By default, the program analyzes the Bassil source file located at `C:/coding-projects/CPP-Dev/bassil/assets/main.basl`. The application will:
+
+1. Set file associations for `.basl` files
+2. Display a startup notification
+3. Clear previous logs and lexical analysis output
+4. Perform lexical analysis on the input file
+5. Display and save the generated tokens
+6. Show a completion notification
+
+## File Descriptions
+
+- `main.cpp`: Contains the `WinMain` function, serving as the entry point for the Windows application. It orchestrates the lexical analysis process and handles high-level error management.
+- `lexer.h` and `lexer.cpp`: Define token types and implement the core lexical analysis functionality.
+- `error_report.h` and `error_report.cpp`: Provide the error reporting system, crucial for debugging and user feedback.
+- `utils.h` and `utils.cpp`: House a vast array of utility functions that support various aspects of the Bassil project.
+
+## Token Structure
+
+Each token generated by the lexical analyzer contains:
+
+- Type: Enumerated value indicating the token category
+- Value: The actual text of the token
+- Line number: The line in the source file where the token appears
+- Start column: The starting column of the token
+- End column: The ending column of the token
+
+This detailed token information allows for precise source mapping and error reporting.
+
+## Advanced Features
+
+### ANSI-Enabled Console Output
+
+Bassil supports rich console output using ANSI escape sequences. This feature allows for:
+
+- Colorized output for improved readability
+- Bold, italic, and underlined text formatting
+- Custom styling of console messages
+
+### File Association and Icon Setting
+
+The project includes functionality to automatically associate `.basl` files with the Bassil language in the Windows registry. This feature enhances the user experience by providing a custom icon for Bassil source files in Windows Explorer.
+
+### Extensible Lexer Design
+
+The lexical analyzer is designed with extensibility in mind. New token types and language features can be easily added by modifying the `TokenKind` enumeration and updating the `lex` function in `lexer.cpp`.
+
+## Performance Considerations
+
+The Bassil lexer is optimized for performance, utilizing efficient string handling techniques and minimizing memory allocations. Future versions may include benchmarking tools to further optimize the lexical analysis process.
+
+## Future Enhancements
+
+Planned future enhancements for the Bassil project include:
+
+- Implementation of a parser for syntactic analysis
+- Semantic analysis phase
+- Code generation capabilities
+- Integrated Development Environment (IDE) for Bassil
+- Cross-platform support (Linux, macOS)
+
+## Contributing
+
+Contributions to the Bassil Language Project are welcome. Please ensure that your code adheres to the existing style and includes appropriate documentation and test coverage. For major changes, please open an issue first to discuss the proposed changes.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- Thanks to all contributors and supporters of the Bassil project.
+- Special thanks to the open-source community for providing invaluable resources and inspiration.
+
+## Contact
+
+For any queries, suggestions, or contributions, please open an issue in the GitHub repository or contact the project maintainers directly.
+
+---
+
+We hope this README provides a comprehensive overview of the Bassil Language Project. Happy coding with Bassil!
