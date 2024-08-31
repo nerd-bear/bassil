@@ -12,6 +12,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <limits>
 #include <sstream>
 #include <fstream>
 #include <regex>
@@ -163,6 +164,8 @@ namespace Utils
 
 
     bool SetFileAssociationIcon(const std::wstring& fileExtension, const std::wstring& iconPath);
+
+    std::string readLineFromFile(std::fstream &file, unsigned int lineNum);
 }
 
 #endif // UTILS_H
