@@ -1,4 +1,66 @@
-Input file read at: 2024-08-31 20:37:20
+Input string: // This is a sample input file for the Bassil language lexer
+
+// Basic variable declarations and assignments
+int x = 5;
+float pi = 3.14159;
+char initial = 'A';
+string greeting = "Hello, World!";
+
+// Arithmetic operations
+int result = (10 + 20) * 3 / 2 - 5;
+
+// Logical and comparison operations
+bool isValid = (x > 0) && (pi < 4.0) || (initial != 'B');
+
+// Control structures (assuming they are part of the language)
+if (isValid) {
+    print("The condition is true");
+} else {
+    print("The condition is false");
+}
+
+// Loop structure (assuming it's part of the language)
+for (int i = 0; i < 10; i = i + 1) {
+    print(i);
+}
+
+// Function definition (assuming it's part of the language)
+function int factorial(int n) {
+    if (n <= 1) return 1;
+    return n * factorial(n - 1);
+}
+
+// Testing string with escaped characters
+string specialString = "This string has \"quotes\" and a newline\nand a tab\t";
+
+// Testing numbers
+int largeNumber = 1000000;
+float smallFloat = 0.00001;
+int negativeNumber = -42;
+
+// Testing identifiers
+int camelCaseVar = 10;
+string snake_case_var = "Snake";
+float _leading_underscore = 1.5;
+char identifier123 = 'X';
+
+// Testing operators
+int a = 5;
+int b = 3;
+bool logicalTest = (a > b) && (a != b) || (b <= a);
+
+// Edge cases and potential challenges
+string emptyString = "";
+char newlineChar = '\n';
+float invalidNumber = 3.14.15;  // This should probably be flagged as an error
+string unterminatedString = "This string doesn't end;
+
+// Testing comments
+/* This is a multi-line comment
+   It should be ignored by the lexer
+*/
+
+// End of file
 Error: Unknown character ''' at line 6, column 16
 Error: Unknown character ''' at line 6, column 18
 Error: Unknown character ''' at line 13, column 53
@@ -13,7 +75,6 @@ Error: Unknown character ''' at line 54, column 23
 Error: Multiple decimal points in number at line 55, column 27
 Error: Unknown character '.' at line 55, column 27
 Error: Unterminated string at line 56, column 29
-Lexical analysis completed in 0.013579 seconds
 [display_tokens] Displaying tokens:
 Token at line 1, columns 1-0: MathOperator: /
 Token at line 1, columns 2-1: MathOperator: /
@@ -1023,4 +1084,3 @@ Token at line 56, columns 27-26: EqualsSign: =
 [save_tokens] Writing token to file:
 [save_tokens] Finished writing token to file.
 [save_tokens] Successfully closed the file.
-Error occurred at 2024-08-31 20:37:22.: Failed to parse date string

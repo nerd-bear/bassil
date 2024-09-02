@@ -24,7 +24,7 @@
 #include <stdexcept>
 #include <fstream>
 #include <limits>
-#include <strsafe.h> // Add this include for StringCchCopyW
+#include <strsafe.h> // include for StringCchCopyW
 
 /**
  * @brief Fallback implementation of StringCchCopyW if not available in the system headers.
@@ -75,7 +75,7 @@ namespace Utils
      * // result now contains {"apple", "banana", "cherry"}
      * @endcode
      */
-    std::vector<std::string> split_string(const std::string &s, const std::string &delimiter)
+    std::vector<std::string> split_string(const std::string &s, const std::string &delimiter = " ")
     {
         std::vector<std::string> tokens;
         size_t start = 0, end = 0;
@@ -630,19 +630,21 @@ namespace Utils
      * }
      * @endcode
      */
-    void enableAnsiInConsole()
+    int enableAnsiInConsole()
     {
         HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
         DWORD mode = 0;
         if (!GetConsoleMode(hConsole, &mode))
         {
-            throw std::runtime_error("Failed to get console mode");
+            return 1;
         }
         mode |= ENABLE_VIRTUAL_TERMINAL_PROCESSING;
         if (!SetConsoleMode(hConsole, mode))
         {
-            throw std::runtime_error("Failed to set console mode");
+            return 1;
         }
+
+        return 0;
     }
 
     /**
@@ -1001,7 +1003,7 @@ namespace Utils
      * std::cout << centered << std::endl; // Outputs: "---Hello---"
      * @endcode
      */
-    std::string centerString(const std::string &text, size_t width, char fillChar = ' ')
+    std::string centerString(const std::string &text, size_t width, char fillChar)
     {
         if (text.length() >= width)
         {
@@ -1226,5 +1228,4 @@ namespace Utils
 
         return line;
     }
-
 } // namespace Utils

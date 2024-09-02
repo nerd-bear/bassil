@@ -35,9 +35,11 @@
  */
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nShowCmd) {
     try {
+        Utils::enableAnsiInConsole();
+
         const std::string inputFilePath = "C:/coding-projects/CPP-Dev/bassil/assets/main.basl";
 
-        reportError(inputFilePath, 5, 10, "Unkown token '=', expected ; at line token end termanation with no segment end. 8 bit overflow with 12 bit hex 0x0087");
+        reportError(inputFilePath, 5, 10, 14, "Unkown token '=', expected ; at pos:9");
 
         if (Utils::SetFileAssociationIcon(L".basl", L"C:/coding-projects/CPP-Dev/bassil/assets/img/logo.ico")) {
             std::wcout << L"File association icon set successfully!" << std::endl;

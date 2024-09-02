@@ -148,7 +148,7 @@ namespace Utils
      * This function enables ANSI escape sequence processing for the console output,
      * allowing the use of colored text and other formatting in the console.
      */
-    void enableAnsiInConsole();
+    int enableAnsiInConsole();
 
     /**
      * @brief Checks if ANSI escape sequences are enabled in the console.
