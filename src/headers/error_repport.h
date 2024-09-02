@@ -4,6 +4,8 @@
 #include <string>
 #include "C:/coding-projects/CPP-Dev/bassil/src/headers/utils.h"
 
-int reportError(std::string filePath, int lineNumber, int start_column, int end_column, std::string msg);
+void reportAnsiError(const std::string& filePath, int lineNumber, int startColumn, int endColumn, const std::string& line, const std::string& msg);
+void reportNonAnsiError(const std::string& filePath, int lineNumber, int startColumn, int endColumn, const std::string& line, const std::string& msg);
+int reportError(const std::string& filePath, int lineNumber, int startColumn, int endColumn, const std::string& msg);
 
 #endif
