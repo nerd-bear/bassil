@@ -58,5 +58,8 @@
         "iomanip": "cpp",
         "span": "cpp",
         "variant": "cpp"
-    }
+    },
+    "cSpell.words": [
+        "Bassil"
+    ]
 }

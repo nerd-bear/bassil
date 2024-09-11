@@ -199,6 +199,7 @@ namespace Utils
      */
     int CreateWinAPI32MessageBox(const std::string &_title, const std::string &_message, int _type)
     {
+#ifdef _WINDOWS_
         UINT _popupType;
         switch (_type)
         {
@@ -224,6 +225,11 @@ namespace Utils
             throw std::runtime_error("Unknown Windows API 32-BIT-VERSION POPUP MESSAGE type");
         }
         return MessageBoxW(NULL, StringToLPCWSTR(_message), StringToLPCWSTR(_title), _popupType);
+#else
+        std::cerr << "Windows API 32-BIT-VERSION not available\n";
+        exit(-1);
+        return -1;
+#endif
     }
 
     /**
@@ -259,6 +265,7 @@ namespace Utils
      */
     void CreateWinAPI32BallonNotification(const std::string &_title, const std::string &_message, int _type)
     {
+#ifdef _WINDOWS_
         NOTIFYICONDATAW nid = {};
         nid.cbSize = sizeof(NOTIFYICONDATAW);
         nid.hWnd = NULL;
@@ -294,6 +301,10 @@ namespace Utils
 
         Shell_NotifyIconW(NIM_ADD, &nid);
         Shell_NotifyIconW(NIM_MODIFY, &nid);
+#else
+        std::cerr << "Windows API 32-BIT-VERSION not available\n";
+        exit(-1);
+#endif
     }
 
     /**
@@ -334,8 +345,8 @@ namespace Utils
      */
     RECT GetMaximizedScreenSize(int monitorIndex)
     {
+#ifdef _WINDOWS_
         DISPLAY_DEVICE dd = {sizeof(dd)};
-        RECT screenSize = {0};
         int deviceIndex = 0;
 
         while (EnumDisplayDevices(NULL, deviceIndex, &dd, 0))
@@ -356,6 +367,10 @@ namespace Utils
             deviceIndex++;
         }
         throw std::runtime_error("Monitor index does not exist");
+#else
+        std::cerr << "Windows API 32-BIT-VERSION not available\n";
+        exit(-1)
+#endif
     }
 
     /**
@@ -466,7 +481,7 @@ namespace Utils
      *
      * @return int Returns 0 on successful logging, 1 if there was an error opening the log file.
      *
-     * @note The log file is located at "C:/coding-projects/CPP-Dev/bassil/assets/logs.log".
+     * @note The log file is located at "C:/coding-projects/CPP-Dev/bassil/output/Run-0001/logs.log".
      * @note The function opens the file in append mode, so new log entries are added to the end of the file.
      * @note Each log entry is written on a new line.
      *
@@ -483,9 +498,11 @@ namespace Utils
     int general_log(const std::string &str, bool isPrintTrue)
     {
         if (!isPrintTrue)
+        {
             return 0;
+        }
 
-        std::ofstream outputFile("C:/coding-projects/CPP-Dev/bassil/assets/logs.log", std::ios::app);
+        std::ofstream outputFile("C:/coding-projects/CPP-Dev/bassil/output/logs.log", std::ios::app);
         if (!outputFile.is_open())
         {
             std::cerr << "[general_log] Failed to open file." << std::endl;
@@ -496,65 +513,9 @@ namespace Utils
         return 0;
     }
 
-    /**
-     * @brief Clears the content of the lexical analysis output file.
-     *
-     * This function opens the lexical analysis output file and truncates its content,
-     * effectively clearing all previous output. It's typically used before starting
-     * a new lexical analysis process to ensure a clean output file.
-     *
-     * @return int Returns 0 on successful clearing of the file, 1 if there was an error opening the file.
-     *
-     * @note The lexical analysis output file is located at "C:/coding-projects/CPP-Dev/bassil/assets/after_lex.txt".
-     * @note The function opens the file in truncate mode (std::ios::trunc), which clears all content upon opening.
-     *
-     * @see std::ofstream
-     *
-     * @par Example:
-     * @code
-     * int result = Utils::clear_lex_out();
-     * if (result != 0) {
-     *     std::cerr << "Failed to clear lexical analysis output file" << std::endl;
-     * }
-     * @endcode
-     */
-    int clear_lex_out()
+    int clear_file(const std::string &filename)
     {
-        std::ofstream outputFile("C:/coding-projects/CPP-Dev/bassil/assets/after_lex.txt", std::ios::trunc);
-        if (!outputFile.is_open())
-        {
-            std::cerr << "[clear_lex_out] Failed to open file." << std::endl;
-            return 1;
-        }
-        outputFile.close();
-        return 0;
-    }
-
-    /**
-     * @brief Clears the content of the log file.
-     *
-     * This function opens the log file and truncates its content, effectively
-     * clearing all previous log entries. It's typically used to start a fresh
-     * log session or to manage log file size.
-     *
-     * @return int Returns 0 on successful clearing of the file, 1 if there was an error opening the file.
-     *
-     * @note The log file is located at "C:/coding-projects/CPP-Dev/bassil/assets/logs.log".
-     * @note The function opens the file in truncate mode (std::ios::trunc), which clears all content upon opening.
-     *
-     * @see std::ofstream
-     *
-     * @par Example:
-     * @code
-     * int result = Utils::clear_logs();
-     * if (result != 0) {
-     *     std::cerr << "Failed to clear log file" << std::endl;
-     * }
-     * @endcode
-     */
-    int clear_logs()
-    {
-        std::ofstream outputFile("C:/coding-projects/CPP-Dev/bassil/assets/logs.log", std::ios::trunc);
+        std::ofstream outputFile(filename, std::ios::trunc);
         if (!outputFile.is_open())
         {
             std::cerr << "[clear_logs] Failed to open file." << std::endl;
@@ -1227,5 +1188,38 @@ namespace Utils
         file.seekg(originalPos);
 
         return line;
+    }
+
+    std::string leftPad(std::string str, int amount)
+    {
+        if (amount <= 0)
+        {
+            std::exit(1);
+            return "Exit code 1";
+        }
+
+        return std::string(amount, ' ') + str;
+    }
+
+    std::string rightPad(std::string str, int amount)
+    {
+        if (amount <= 0)
+        {
+            std::exit(1);
+            return "Exit code 1";
+        }
+
+        return str + std::string(amount, ' ');
+    }
+
+    std::string pad(std::string str, int amount)
+    {
+        if (amount <= 0)
+        {
+            std::exit(1);
+            return "Exit code 1";
+        }
+
+        return rightPad(leftPad(str, amount), amount);
     }
 } // namespace Utils

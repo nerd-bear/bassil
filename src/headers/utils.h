@@ -20,9 +20,12 @@
 #ifndef UTILS_H
 #define UTILS_H
 
-#pragma comment(lib, "shell32.lib")  // Link with shell32.lib for SHChangeNotify
+#pragma comment(lib, "shell32.lib") // Link with shell32.lib for SHChangeNotify
 
+#ifdef _WIN32
 #include <windows.h>
+#endif
+
 #include <iostream>
 #include <vector>
 #include <string>
@@ -41,7 +44,7 @@ namespace Utils
      * @param delimiter The string that serves as the delimiter for splitting.
      * @return std::vector<std::string> A vector containing the substrings resulting from splitting the input string.
      */
-    std::vector<std::string> split_string(const std::string& s, const std::string& delimiter);
+    std::vector<std::string> split_string(const std::string &s, const std::string &delimiter);
 
     /**
      * @brief Converts a standard string to a wide string.
@@ -50,7 +53,7 @@ namespace Utils
      * @param _isUtf8Enabled Flag to indicate if UTF-8 encoding should be used. Default is true.
      * @return std::wstring The resulting wide string after conversion.
      */
-    std::wstring StringToWString(const std::string& _string, bool _isUtf8Enabled = true);
+    std::wstring StringToWString(const std::string &_string, bool _isUtf8Enabled = true);
 
     /**
      * @brief Converts a standard string to a wide character string (LPCWSTR).
@@ -58,7 +61,7 @@ namespace Utils
      * @param _string The input string to be converted.
      * @return LPCWSTR The resulting wide character string after conversion.
      */
-    LPCWSTR StringToLPCWSTR(const std::string& _string);
+    LPCWSTR StringToLPCWSTR(const std::string &_string);
 
     /**
      * @brief Creates a Windows API 32-bit message box.
@@ -68,7 +71,7 @@ namespace Utils
      * @param _type The type of the message box, determining which buttons are displayed (1-6).
      * @return int The ID of the button clicked by the user.
      */
-    int CreateWinAPI32MessageBox(const std::string& _title, const std::string& _message, int _type);
+    int CreateWinAPI32MessageBox(const std::string &_title, const std::string &_message, int _type);
 
     /**
      * @brief Creates a Windows API balloon notification.
@@ -77,7 +80,7 @@ namespace Utils
      * @param _message The content of the notification.
      * @param _type The type of the notification, determining the icon displayed (0-3). Default is 0.
      */
-    void CreateWinAPI32BallonNotification(const std::string& _title, const std::string& _message, int _type = 0);
+    void CreateWinAPI32BallonNotification(const std::string &_title, const std::string &_message, int _type = 0);
 
     /**
      * @brief Retrieves the maximum screen size for a given monitor.
@@ -93,7 +96,7 @@ namespace Utils
      * @param s The string to be trimmed. This parameter is passed by reference and modified in-place.
      * @return std::string& A reference to the modified string, allowing for method chaining.
      */
-    std::string& ltrim(std::string& s);
+    std::string &ltrim(std::string &s);
 
     /**
      * @brief Trims trailing whitespace from a string.
@@ -101,7 +104,7 @@ namespace Utils
      * @param s The string to be trimmed. This parameter is passed by reference and modified in-place.
      * @return std::string& A reference to the modified string, allowing for method chaining.
      */
-    std::string& rtrim(std::string& s);
+    std::string &rtrim(std::string &s);
 
     /**
      * @brief Trims both leading and trailing whitespace from a string.
@@ -109,7 +112,7 @@ namespace Utils
      * @param s The string to be trimmed. This parameter is passed by reference and modified in-place.
      * @return std::string& A reference to the modified string, allowing for method chaining.
      */
-    std::string& trim(std::string& s);
+    std::string &trim(std::string &s);
 
     /**
      * @brief Logs a message to a file and optionally prints it.
@@ -118,21 +121,9 @@ namespace Utils
      * @param isPrintTrue Flag to indicate if the message should be printed to the console. Default is true.
      * @return int Returns 0 on successful logging, 1 if there was an error opening the log file.
      */
-    int general_log(const std::string& str, bool isPrintTrue = true);
+    int general_log(const std::string &str, bool isPrintTrue = true);
 
-    /**
-     * @brief Clears the content of the lexical analysis output file.
-     *
-     * @return int Returns 0 on successful clearing of the file, 1 if there was an error opening the file.
-     */
-    int clear_lex_out();
-
-    /**
-     * @brief Clears the content of the log file.
-     *
-     * @return int Returns 0 on successful clearing of the file, 1 if there was an error opening the file.
-     */
-    int clear_logs();
+    int clear_file(const std::string &filename);
 
     /**
      * @brief Reads the entire content of a file into a string.
@@ -140,7 +131,7 @@ namespace Utils
      * @param filename The path to the file to be read.
      * @return std::string The content of the file as a string.
      */
-    std::string readFileToString(const std::string& filename);
+    std::string readFileToString(const std::string &filename);
 
     /**
      * @brief Enables ANSI escape sequences for console output.
@@ -163,7 +154,7 @@ namespace Utils
      * @param colorCode The string to be validated as a hex color code.
      * @return bool Returns true if the color code is a valid hex color, false otherwise.
      */
-    bool isValidHexColor(const std::string& colorCode);
+    bool isValidHexColor(const std::string &colorCode);
 
     /**
      * @brief Applies a hex color code to a given text string using ANSI escape sequences.
@@ -172,7 +163,7 @@ namespace Utils
      * @param colorCode The hex color code to apply (e.g., "#FF0000" for red).
      * @return std::string The text formatted with ANSI escape sequences for the specified color.
      */
-    std::string colorText(const std::string& text, const std::string& colorCode);
+    std::string colorText(const std::string &text, const std::string &colorCode);
 
     /**
      * @brief Formats text as bold using ANSI escape sequences.
@@ -180,7 +171,7 @@ namespace Utils
      * @param text The text to be formatted as bold.
      * @return std::string The bold-formatted text.
      */
-    std::string boldText(const std::string& text);
+    std::string boldText(const std::string &text);
 
     /**
      * @brief Formats text as italic using ANSI escape sequences.
@@ -188,7 +179,7 @@ namespace Utils
      * @param text The text to be formatted as italic.
      * @return std::string The italic-formatted text.
      */
-    std::string italicText(const std::string& text);
+    std::string italicText(const std::string &text);
 
     /**
      * @brief Formats text with an underline using ANSI escape sequences.
@@ -196,7 +187,7 @@ namespace Utils
      * @param text The text to be underlined.
      * @return std::string The underlined text.
      */
-    std::string underlineText(const std::string& text);
+    std::string underlineText(const std::string &text);
 
     /**
      * @brief Applies multiple text formatting options using ANSI escape sequences.
@@ -208,7 +199,7 @@ namespace Utils
      * @param colorCode Hex color code to apply (e.g., "#FF0000" for red).
      * @return std::string The formatted text.
      */
-    std::string formatText(const std::string& text, bool bold, bool italic, bool underline, const std::string& colorCode);
+    std::string formatText(const std::string &text, bool bold, bool italic, bool underline, const std::string &colorCode);
 
     /**
      * @brief Removes all ANSI escape sequences from a string.
@@ -216,7 +207,7 @@ namespace Utils
      * @param text The text containing ANSI escape sequences.
      * @return std::string The text with all ANSI escape sequences removed.
      */
-    std::string stripAnsiEscapeCodes(const std::string& text);
+    std::string stripAnsiEscapeCodes(const std::string &text);
 
     /**
      * @brief Truncates a string to a specified length, adding an ellipsis if truncated.
@@ -225,7 +216,7 @@ namespace Utils
      * @param maxLength The maximum length of the truncated string, including the ellipsis.
      * @return std::string The truncated string.
      */
-    std::string truncateString(const std::string& text, size_t maxLength);
+    std::string truncateString(const std::string &text, size_t maxLength);
 
     /**
      * @brief Centers a string within a field of a given width.
@@ -235,7 +226,7 @@ namespace Utils
      * @param fillChar The character to use for padding (default is space).
      * @return std::string The centered string.
      */
-    std::string centerString(const std::string& text, size_t width, char fillChar = ' ');
+    std::string centerString(const std::string &text, size_t width, char fillChar = ' ');
 
     /**
      * @brief Wraps text to a specified line length.
@@ -244,7 +235,7 @@ namespace Utils
      * @param lineLength The maximum length of each line.
      * @return std::string The wrapped text.
      */
-    std::string wrapText(const std::string& text, size_t lineLength);
+    std::string wrapText(const std::string &text, size_t lineLength);
 
     /**
      * @brief Sets the file association icon for a specific file extension.
@@ -253,7 +244,7 @@ namespace Utils
      * @param iconPath The full path to the icon file.
      * @return bool Returns true if the association was set successfully, false otherwise.
      */
-    bool SetFileAssociationIcon(const std::wstring& fileExtension, const std::wstring& iconPath);
+    bool SetFileAssociationIcon(const std::wstring &fileExtension, const std::wstring &iconPath);
 
     /**
      * @brief Reads a specific line from a file.
@@ -263,6 +254,12 @@ namespace Utils
      * @return std::string The content of the specified line.
      */
     std::string readLineFromFile(std::fstream &file, unsigned int lineNum);
+
+    std::string leftPad(std::string str, int amount);
+
+    std::string rightPad(std::string str, int amount);
+    
+    std::string pad(std::string str, int amount);
 }
 
 #endif // UTILS_H
